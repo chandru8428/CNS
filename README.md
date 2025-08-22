@@ -1,4 +1,4 @@
-## EX. NO: 1 : IMPLEMENTATION OF CAESAR CIPHER
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/764536f3-ed00-485a-aeb7-75da4ecf81ad" />## EX. NO: 1 : IMPLEMENTATION OF CAESAR CIPHER
  
 
 ## AIM:
@@ -28,7 +28,54 @@ becomes C. To change a message back, each letter is replaced by the one three be
 
 
 PROGRAM :-
+```
+#include <stdio.h>
+#include <string.h>
 
+int main() {
+    char text[100];
+    int i, key, choice;
+
+    printf("Enter a message: ");
+    fgets(text, sizeof(text), stdin);
+
+    // remove newline character
+    text[strcspn(text, "\n")] = '\0';
+
+    printf("Enter the key (number of shifts): ");
+    scanf("%d", &key);
+
+    printf("Choose an option:\n1. Encrypt\n2. Decrypt\nEnter choice: ");
+    scanf("%d", &choice);
+
+    for (i = 0; text[i] != '\0'; i++) {
+        if (text[i] >= 'A' && text[i] <= 'Z') {   // uppercase
+            if (choice == 1)  // Encryption
+                text[i] = (text[i] - 'A' + key) % 26 + 'A';
+            else if (choice == 2)  // Decryption
+                text[i] = (text[i] - 'A' - key + 26) % 26 + 'A';
+        }
+        else if (text[i] >= 'a' && text[i] <= 'z') { // lowercase
+            if (choice == 1)  // Encryption
+                text[i] = (text[i] - 'a' + key) % 26 + 'a';
+            else if (choice == 2)  // Decryption
+                text[i] = (text[i] - 'a' - key + 26) % 26 + 'a';
+        }
+    }
+
+    if (choice == 1)
+        printf("Encrypted message: %s\n", text);
+    else if (choice == 2)
+        printf("Decrypted message: %s\n", text);
+    else
+        printf("Invalid choice!\n");
+
+    return 0;
+}
+
+```
 
 
 OUTPUT :-
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/50b8c865-fbc2-46ab-b5b9-526d489ac684" />
+
