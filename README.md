@@ -1,4 +1,3 @@
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/764536f3-ed00-485a-aeb7-75da4ecf81ad" />## EX. NO: 1 : IMPLEMENTATION OF CAESAR CIPHER
  
 
 ## AIM:
